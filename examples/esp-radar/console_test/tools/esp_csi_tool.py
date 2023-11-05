@@ -1156,7 +1156,7 @@ def serial_handle(queue_read, queue_write, port):
     for data_valid in data_valid_list.iloc:
         # print(type(data_valid), data_valid)
         # print(f"file_name: {data_valid['file_name']}")
-        data_valid['file_fd'] = open(data_valid['file_name'], 'w')
+        data_valid['file_fd'] = open(data_valid['file_name'], 'w',newline="")
         data_valid['file_writer'] = csv.writer(data_valid['file_fd'])
         data_valid['file_writer'].writerow(data_valid['columns_names'])
 
